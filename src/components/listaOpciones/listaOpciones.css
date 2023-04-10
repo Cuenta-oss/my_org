@@ -1,0 +1,22 @@
+.section__options {
+    margin: 24px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section__options label {
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section__options select {
+    width: 100%;
+    background-color: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 20px 15px;
+    font-size: 1em;
+    border-radius: .8em;
+    outline-color: #6278F7;
+}

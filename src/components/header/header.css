@@ -1,0 +1,9 @@
+.header__page {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.header__page img {
+    width: 100%;
+}

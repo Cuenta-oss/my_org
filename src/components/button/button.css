@@ -1,0 +1,17 @@
+.btn__create {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #6278F7;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #FFF;
+    border: none;
+    border-radius: .8em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn__create:hover{
+    color: #95FFD4;
+}
