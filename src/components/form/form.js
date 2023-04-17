@@ -3,11 +3,13 @@ import { CampoTexto } from '../componenteTexto';
 import { ListaOpciones } from '../listaOpciones/listaOpciones';
 import { Boton } from '../button/button';
 import { useState } from 'react';
-const Form = () => {
+const Form = (props) => {
     const [name, setName] = useState("");
     const [position, setPosition] = useState("");
     const [photo, setPhoto] = useState("");
     const [team, setTeam] = useState("");
+
+    const { registroColaborador } = props;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -17,7 +19,7 @@ const Form = () => {
             photo,
             team
         }
-        console.log(data);
+        registroColaborador(data);
     }
     return <section className='section__form'>
         <form onSubmit={handleSubmit}>
@@ -26,7 +28,7 @@ const Form = () => {
                 <CampoTexto titulo="Nombre" placeholder="Ingrese nombre" required valor={name} updateValue={setName} />
                 <CampoTexto titulo="Puesto" placeholder="Ingrese puesto" required valor={position} updateValue={setPosition} />
                 <CampoTexto titulo="Foto" placeholder="Url de foto" required valor={photo} updateValue={setPhoto} />
-                <ListaOpciones valor={team} updateValue={setTeam} />
+                <ListaOpciones valor={team} updateValue={setTeam} listTeam={props.listTeam} />
                 <Boton texto="Crear" />
             </div>
         </form>
