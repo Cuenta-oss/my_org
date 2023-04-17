@@ -67,6 +67,10 @@ function App() {
     setColaborators([...colaborators, colaborador]);
   }
 
+  const registroEquipo = (equipo) => {
+    setListTeam([...listTeam, { ...equipo, id: uuidv4() }]);
+  }
+
   const deleteColaborator = (id) => {
     console.log(`Eliminando colab...${id}`);
     setColaborators(colaborators.filter(colaborator => colaborator.id !== id))
@@ -89,7 +93,9 @@ function App() {
       <Header />
       {showForm ? <Form
         listTeam={listTeam.map((equipo) => equipo.title)}
-        registroColaborador={registroColaborador} />
+        registroColaborador={registroColaborador}
+        registroEquipo={registroEquipo}
+      />
         :
         <></>}
       {/* <Form /> */}

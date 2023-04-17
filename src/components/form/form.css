@@ -1,6 +1,6 @@
 .section__form {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding: 50px 0;
     /* transition: all .5s ease; */
     /* background-color: blueviolet; */
@@ -8,7 +8,7 @@
 
 .section__form form {
     padding: 20px 30px;
-    width: 50%;
+    width: 40%;
     background: #F7F7F7;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, .08);
     border-radius: 20px;
