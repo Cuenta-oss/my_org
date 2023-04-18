@@ -63,6 +63,7 @@ function App() {
     //Generar un id unico para cada colaboraador
     const id = uuidv4();
     colaborador.id = id;
+    colaborador.fav = false;
     // console.log("Colaborador", colaborador);
     setColaborators([...colaborators, colaborador]);
   }
@@ -77,8 +78,18 @@ function App() {
     // console.log(id);
   }
 
+  const selectFavorite = (id) => {
+    const colabUpdates = colaborators.map((colab) => {
+      if (colab.id === id) {
+        colab.fav = !colab.fav;
+      }
+      return colab;
+    })
+    setColaborators(colabUpdates);
+  }
+
+
   const updateColorTeam = (color, id) => {
-    console.log(color, id);
     const updateTeam = listTeam.map((team) => {
       if (team.id === id) {
         team.primaryColor = color;
@@ -108,6 +119,7 @@ function App() {
           colaborators={colaborators.filter(colaborators => colaborators.team === team.title)}
           deleteColaborator={deleteColaborator}
           updateColorTeam={updateColorTeam}
+          selectFavorite={selectFavorite}
         />
       })}
       <Footer />

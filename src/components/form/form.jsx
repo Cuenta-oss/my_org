@@ -1,5 +1,5 @@
 import './form.css';
-import { CampoTexto } from '../componenteTexto';
+import { Field } from '../componenteField';
 import { ListaOpciones } from '../listaOpciones/listaOpciones';
 import { Boton } from '../button/button';
 import { useState } from 'react';
@@ -36,21 +36,21 @@ const Form = (props) => {
         <form onSubmit={handleSubmitColab}>
             <h2 className='section__title'>Rellena el formulario para crear el colaborador.</h2>
             <div className='form__inputs'>
-                <CampoTexto
+                <Field
                     titulo="Nombre"
                     placeholder="Ingrese nombre"
                     required
                     valor={name}
                     updateValue={setName}
                 />
-                <CampoTexto
+                <Field
                     titulo="Puesto"
                     placeholder="Ingrese puesto"
                     required
                     valor={position}
                     updateValue={setPosition}
                 />
-                <CampoTexto
+                <Field
                     titulo="Foto"
                     placeholder="Url de foto"
                     required
@@ -68,19 +68,20 @@ const Form = (props) => {
         <form onSubmit={handleSubmitTeam}>
             <h2 className='section__title'>Rellena el formulario para crear el equipo.</h2>
             <div className='form__inputs'>
-                <CampoTexto
+                <Field
                     titulo="Titulo"
                     placeholder="Ingrese titulo"
                     required
                     valor={title}
                     updateValue={setTitle}
                 />
-                <CampoTexto
+                <Field
                     titulo="Color"
                     placeholder="Ingrese color en hexadecimal"
                     required
                     valor={color}
                     updateValue={setColor}
+                    type="color"
                 />
                 <Boton texto="Crear" />
             </div>

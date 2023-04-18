@@ -4,7 +4,7 @@ import hexToRgba from 'hex-to-rgba';
 
 export const Team = (props) => {
     const { primaryColor, secondaryColor, title, id } = props.datos
-    const { colaborators, deleteColaborator, updateColorTeam } = props
+    const { colaborators, deleteColaborator, updateColorTeam, selectFavorite } = props
 
     return <>
         {
@@ -25,7 +25,8 @@ export const Team = (props) => {
                             datos={colaborador}
                             key={index}
                             primaryColor={primaryColor}
-                            deleteColaborator={deleteColaborator} />)
+                            deleteColaborator={deleteColaborator} 
+                            selectFavorite={selectFavorite}/>)
                     }
                 </div>
             </section >
